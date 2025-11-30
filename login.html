@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Quiz - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="robots" content="noindex">
+</head>
+<body>
+    <div class="container">
+        <div class="quiz-wrapper login-wrapper">
+            <div class="quiz-header">
+                <h1>Mini Quiz</h1>
+            </div>
+
+            <div class="quiz-content">
+                <form id="login-form" class="login-form">
+                    <label for="name">Enter your name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                    <label for="email">Enter your email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com">
+
+                    <label for="number">Enter your phone</label>
+                    <input type="tel" id="number" name="number" placeholder="Optional">
+
+                    <div class="form-actions">
+                        <button type="button" id="start-btn" class="btn btn-primary">Start Quiz</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('start-btn').addEventListener('click', function () {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const number = document.getElementById('number').value.trim();
+            alert("welcome to mini quiz " + name);
+            if (!name) {
+                alert('Please enter your name');
+                document.getElementById('name').focus();
+                return;
+            }
+
+        
+
+            // Redirect to quiz
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
