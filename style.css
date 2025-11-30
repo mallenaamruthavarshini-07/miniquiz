@@ -124,6 +124,14 @@ body {
     animation: fadeIn 0.8s ease;
 }
 
+.welcome-banner {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+    animation: slideInLeft 0.6s ease;
+    display: none;
+}
+
 .quiz-info {
     display: flex;
     flex-direction: column;
@@ -252,10 +260,10 @@ body {
     margin-bottom: 10px;
 }
 
-.score-value {
-    font-size: 48px;
-    font-weight: bold;
-    animation: flip 1s ease-in-out;
+.result-message {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
 }
 
 /* ===== FOOTER ===== */
@@ -339,37 +347,82 @@ body {
 }
 
 /* ===== LOGIN FORM STYLES ===== */
-.login-wrapper {
-    max-width: 420px;
-    margin: 0 auto;
+.login-screen {
+    animation: slideUp 0.6s ease-out;
+}
+
+.login-screen.hidden {
+    animation: slideDown 0.6s ease-out forwards;
 }
 
 .login-form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     width: 100%;
 }
 
-.login-form label {
-    font-size: 14px;
-    color: #444;
+.login-form h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+    animation: fadeIn 0.8s ease;
 }
 
-.login-form input {
-    padding: 10px 12px;
-    border: 1px solid #ddd;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    animation: slideInRight 0.5s ease both;
+}
+
+.form-group:nth-child(2) { animation-delay: 0.1s; }
+.form-group:nth-child(3) { animation-delay: 0.2s; }
+.form-group:nth-child(4) { animation-delay: 0.3s; }
+
+.form-group label {
+    font-size: 14px;
+    color: #555;
+    font-weight: 600;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 2px solid #ddd;
     border-radius: 8px;
     font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
 }
 
 .form-actions {
     display: flex;
     justify-content: center;
-    margin-top: 8px;
+    margin-top: 12px;
+    animation: slideInLeft 0.5s ease 0.4s both;
 }
 
-/* small tweak for header on login */
-.quiz-header {
-    padding: 24px 20px;
+.quiz-screen {
+    animation: slideUp 0.6s ease 0.3s both;
+}
+
+.quiz-screen.hidden {
+    display: none;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
 }

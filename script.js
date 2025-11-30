@@ -9,7 +9,7 @@ const quizData = [
         correct: 0 },
     { question: "which data type is used to store text", 
         options: ["int", "string", "float", "boolean"],
-         correct: 3 },
+         correct: 1 },
     { question: "what doees'=='do in coding", 
         options: ["assings a value", "cmpares two values", "ends the program", "takes input"], 
         correct: 2 },
